@@ -87,7 +87,7 @@ func TestGetAnyConvenience(t *testing.T) {
 		logger.CreateLogger(),
 		venvtest.NewWithOSFS(),
 		dst,
-		helpers.FileURL(src),
+		getter.FileURL(src).String(),
 		getter.WithFileCopy(getter.NewFileCopyGetter(vfs.NewOSFS())),
 	)
 	require.NoError(t, err)
@@ -110,7 +110,7 @@ func TestGetConvenience(t *testing.T) {
 		logger.CreateLogger(),
 		venvtest.NewWithOSFS(),
 		dst,
-		helpers.FileURL(src),
+		getter.FileURL(src).String(),
 		getter.WithFileCopy(getter.NewFileCopyGetter(vfs.NewOSFS())),
 	)
 	require.NoError(t, err)
